@@ -18,14 +18,12 @@ import java.util.Optional;
 /**
  * Controlador REST para la gestión del catálogo de productos.
  *
- * <p>Permite:
- * <ul>
- *     <li>Crear, listar, actualizar y eliminar productos</li>
- *     <li>Filtrar por nombre y estado activo</li>
- *     <li>Listar resultados con paginación y ordenación</li>
- * </ul>
+ * Permite:
  *
- * Endpoint base: {@code /api/products}
+ *     Crear, listar, actualizar y eliminar productos
+ *     Filtrar por nombre y estado activo
+ *     Listar resultados con paginación y ordenación
+ *
  */
 @RestController
 @RequestMapping("/api/products")

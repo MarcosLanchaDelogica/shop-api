@@ -27,9 +27,6 @@ import java.util.Optional;
  *     Crear, consultar, actualizar y eliminar clientes
  *     Listar clientes con paginación y filtro por email
  *     Gestionar direcciones asociadas, incluida la dirección predeterminada
- *
- *
- * Endpoint base: {@code /api/customers}
  */
 @RestController
 @RequestMapping("/api/customers")

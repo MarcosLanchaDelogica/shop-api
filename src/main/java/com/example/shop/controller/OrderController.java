@@ -19,6 +19,14 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.Optional;
 
+/*
+    * Controlador REST para la gestión de pedidos.
+    * Permite:
+    * - Crear pedidos con líneas y calcular totales
+    * - Listar pedidos con filtros y paginación
+    * - Consultar detalle completo de un pedido
+    * - Cambiar estado del pedido con transiciones válidas
+ */
 @Slf4j
 @RestController
 @RequestMapping("/api/orders")
@@ -30,6 +38,10 @@ public class OrderController {
     /**
      * POST /api/orders
      * Crea un pedido con sus líneas, calcula totales y estado inicial CREATED
+     *
+     * @param req DTO con los datos de creación del pedido
+     * @return Pedido creado (HTTP 201 Created)
+     *
      */
     @PostMapping
     public ResponseEntity<OrderResponse> createOrder(@Valid @RequestBody OrderCreateRequest req) {
@@ -41,6 +53,12 @@ public class OrderController {
     /**
      * GET /api/orders
      * Lista pedidos con filtros opcionales y paginación
+     * @param customerId filtro opcional por ID de cliente
+     * @param fromDate filtro opcional por fecha mínima de pedido
+     * @param toDate filtro opcional por fecha máxima de pedido
+     * @param status filtro opcional por estado del pedido
+     * @param pageable parámetros de paginación y ordenación
+     * @return Página de pedidos filtrados (HTTP 200 OK)
      */
     @GetMapping
     public ResponseEntity<Page<OrderResponse>> listOrders(
@@ -64,6 +82,8 @@ public class OrderController {
     /**
      * GET /api/orders/{id}
      * Devuelve el detalle completo de un pedido
+     * @param id identificador del pedido
+     * @return Detalle del pedido (HTTP 200 OK)
      */
     @GetMapping("/{id}")
     public ResponseEntity<OrderResponse> getOrderById(@PathVariable Long id) {
@@ -74,6 +94,9 @@ public class OrderController {
     /**
      * PUT /api/orders/{id}/status
      * Cambia el estado del pedido siguiendo transiciones válidas
+     * @param id identificador del pedido
+     * @param req DTO con el nuevo estado
+     * @return Pedido actualizado (HTTP 200 OK)
      */
     @PutMapping("/{id}/status")
     public ResponseEntity<OrderResponse> updateStatus(@PathVariable Long id,
