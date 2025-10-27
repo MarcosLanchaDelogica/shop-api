@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: shop-api
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] [traceId=%X{traceId}] %-5level %logger{36} - %msg%n"
+
+server:
+  port: 8080

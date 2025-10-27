@@ -1,0 +1,14 @@
+package com.example.shop.exceptions;
+
+public enum ErrorCode {
+    VALIDATION_ERROR,
+    RESOURCE_NOT_FOUND,
+    CONFLICT,
+    BAD_REQUEST,
+    DATA_INTEGRITY_VIOLATION,
+    FORBIDDEN,
+    UNAUTHORIZED,
+    BAD_CREDENTIALS,
+    INTERNAL_ERROR,
+    METHOD_NOT_ALLOWED
+}
