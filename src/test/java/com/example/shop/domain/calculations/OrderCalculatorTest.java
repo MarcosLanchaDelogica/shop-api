@@ -2,6 +2,7 @@ package com.example.shop.domain.calculations;
 
 import com.example.shop.domain.model.OrderItem;
 import com.example.shop.domain.model.Product;
+import com.example.shop.Utils.calculations.OrderCalculator;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;

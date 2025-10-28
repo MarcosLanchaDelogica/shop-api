@@ -1,4 +1,4 @@
-package com.example.shop.domain.calculations;
+package com.example.shop.Utils.calculations;
 
 import com.example.shop.domain.model.OrderItem;
 import com.example.shop.domain.model.Product;

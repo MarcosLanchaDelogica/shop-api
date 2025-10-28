@@ -1,4 +1,4 @@
-package com.example.shop.domain.rules;
+package com.example.shop.Utils.rules;
 
 import com.example.shop.domain.enums.OrderStatus;
 import org.springframework.stereotype.Component;

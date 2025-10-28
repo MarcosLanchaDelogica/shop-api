@@ -1,5 +1,6 @@
 package com.example.shop.domain.rules;
 
+import com.example.shop.Utils.rules.OrderStatusTransitionValidator;
 import com.example.shop.domain.enums.OrderStatus;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

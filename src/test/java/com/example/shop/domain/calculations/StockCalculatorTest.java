@@ -1,6 +1,7 @@
 package com.example.shop.domain.calculations;
 
 import com.example.shop.domain.model.Product;
+import com.example.shop.Utils.calculations.StockCalculator;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.server.ResponseStatusException;
 

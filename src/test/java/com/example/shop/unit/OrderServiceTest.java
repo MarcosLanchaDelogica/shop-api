@@ -1,11 +1,11 @@
 package com.example.shop.unit;
 
-import com.example.shop.domain.calculations.OrderCalculator;
-import com.example.shop.domain.calculations.StockCalculator;
+import com.example.shop.Utils.calculations.OrderCalculator;
+import com.example.shop.Utils.calculations.StockCalculator;
 import com.example.shop.domain.enums.OrderStatus;
 import com.example.shop.domain.model.*;
 import com.example.shop.domain.model.Order;
-import com.example.shop.domain.rules.OrderStatusTransitionValidator;
+import com.example.shop.Utils.rules.OrderStatusTransitionValidator;
 import com.example.shop.dto.order.in.*;
 import com.example.shop.dto.order.out.OrderResponse;
 import com.example.shop.mappers.order.*;
