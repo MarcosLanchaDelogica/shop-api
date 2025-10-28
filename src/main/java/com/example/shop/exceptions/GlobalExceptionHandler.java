@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -46,9 +47,9 @@ public class GlobalExceptionHandler {
         return buildError(HttpStatus.FORBIDDEN, ErrorCode.FORBIDDEN, "Acceso denegado", request);
     }
 
-    @ExceptionHandler(org.springframework.security.authentication.BadCredentialsException.class)
+    @ExceptionHandler(BadCredentialsException.class)
     public ResponseEntity<ApiError> handleBadCredentials(
-            org.springframework.security.authentication.BadCredentialsException ex,
+            BadCredentialsException ex,
             HttpServletRequest request) {
 
         var error = ApiError.builder()
