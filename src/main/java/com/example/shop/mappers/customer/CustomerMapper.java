@@ -19,7 +19,7 @@ public interface CustomerMapper {
     Customer toEntity(CustomerCreateRequest dto);
 
     // Mapea Customer a CustomerResponse, ignorando las direcciones porque se gestionan aparte
-    @BeanMapping(ignoreUnmappedSourceProperties = "addresses") // Ignorar direcciones al mapear
+    @BeanMapping(ignoreUnmappedSourceProperties = {"addresses"})
     CustomerResponse toResponse(Customer entity);
 
     // Actualiza una entidad Customer existente con datos de CustomerUpdateRequest
